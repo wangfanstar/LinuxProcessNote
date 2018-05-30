@@ -241,5 +241,6 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 
-#big pdfattachfile
+# big pdfattachfile
 *.avi
+main.pdf
