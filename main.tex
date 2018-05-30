@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TEX program = xelatex
+% !Mode:: "TeX:UTF-8"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{mactexbook}
+\wdtexbooktheme{bodie} %
+\wdtexbookcolor{green} % green, violet, print
+\wdtitle{wangfan的Linux进程笔记}
+\wdedition{\kaishu\emph{2018-05-22}}
+\wdfirstauthor{}
+\wdfirstinstitute{}
+\wdsecondauthor{linux 进程管理 -- 宋宝华}
+\wdsecondinstitute{wangfanstar@163.com}
+%\wdsecondinstitute{\today}
+\wdthirdauthor{\today}
+\wdthirdinstitute{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 去除英文的figure 和 table 标记
+\renewcommand\figurename{}
+\renewcommand\tablename{}
+\renewcommand\theexample{ \arabic{chapter}-\arabic{example}~}%将例号1.1改成1-1
+\renewcommand\examplename{样例}
+%% 去掉章节标题中的数字
+%
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \ #1}{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\wdmaketitle
+
+\shorttoc{目录大纲}{0}
+
+\tableofcontents
+
+%====== be sure to add this part ====%
+\switchgeometry
+\wdstartdoc
+% \addtocontents{toc}{\protect\begin{multicols}{2}}
+% \setcounter{page}{1}
+% \renewcommand{\thepage}{\arabic{page}}
+% ====== be sure to add this part ====%
+\attachpdffiletrue  %true 和 false控制编译时是否添加 视频附件
+\input{lesson4.tex}
+
+
+\input{reference.tex}
+
+%====== be sure to add this part ====%
+%\addtocontents{toc}{\protect\end{multicols}}
+\wdenddoc
+%====== be sure to add this part ====%
+
+%\enddoc
+
+\end{document}
