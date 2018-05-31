@@ -3,10 +3,12 @@
 % !Mode:: "TeX:UTF-8"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{mactexbook}
+%\attachpdffiletrue  %true 添加 视频附件
+\attachpdffilefalse  %false 控制编译时不添加 视频附件
 \wdtexbooktheme{bodie} %
 \wdtexbookcolor{green} % green, violet, print
 \wdtitle{wangfan的Linux进程笔记}
-\wdedition{\href{https://github.com/wangfanstar/LinuxProcessNote}{github}}
+\wdedition{\href{https://github.com/wangfanstar/LinuxProcessNote}{\LaTeX}\quad \href{https://www.wangfanstar.top/categories/宋宝华/}{Web}\quad}
 \wdfirstauthor{}
 \wdfirstinstitute{}
 \wdsecondauthor{linux 进程管理 -- 宋宝华}
@@ -16,15 +18,9 @@
 \wdthirdinstitute{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{myformat.tex}
 
-%% 去除英文的figure 和 table 标记
-\renewcommand\figurename{}
-\renewcommand\tablename{}
-\renewcommand\theexample{ \arabic{chapter}-\arabic{example}~}%将例号1.1改成1-1
-\renewcommand\examplename{样例}
-%% 去掉章节标题中的数字
-%
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername \ #1}{}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -41,8 +37,8 @@
 % \setcounter{page}{1}
 % \renewcommand{\thepage}{\arabic{page}}
 % ====== be sure to add this part ====%
-%\attachpdffiletrue  %true 添加 视频附件
-\attachpdffiletrue  %false 控制编译时不添加 视频附件
+
+
 \input{lesson4.tex}
 
 

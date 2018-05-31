@@ -108,19 +108,22 @@
 \RequirePackage{indentfirst,lettrine}%indent first, lettrine effect
 \RequirePackage{natbib}
 \RequirePackage[nottoc]{tocbibind}%add references into toc
-%\RequirePackage[xetex,
-%                pdfstartview=FitH,
-%                CJKbookmarks=true,
-%                bookmarksnumbered=true,
-%                bookmarksopen=true,
-%                colorlinks,
-%                pdfborder=001,   %color borders
-%                linkcolor=black,
-%                anchorcolor=black,
-%                citecolor=darkblue]{hyperref} %bookmarks
-\RequirePackage[xetex]{hyperref} %bookmarks
-\hypersetup{pdfencoding=auto}
+\RequirePackage[xetex,
+                pdfstartview=FitH,
+                CJKbookmarks=true,
+                bookmarksnumbered=true,
+                bookmarksopen=false,
+                colorlinks,
+                pdfborder=001,   %color borders
+                linkcolor=black,
+                anchorcolor=black,
+                citecolor=darkblue]{hyperref} %bookmarks
+%\RequirePackage[xetex]{hyperref} %bookmarks
+\hypersetup{pdfencoding=auto,bookmarksdepth=4,bookmarksopenlevel=0}
 \RequirePackage{attachfile2}
+\RequirePackage[open,openlevel=0,atend]{bookmark}
+\RequirePackage{fancyvrb,sverb}
+
 %============ Basic Layout Settings (themes and colors) ==========================%
 %=================================================================================%
 
