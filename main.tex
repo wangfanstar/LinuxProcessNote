@@ -5,9 +5,16 @@
 \documentclass{mactexbook}
 %\attachpdffiletrue  %true 添加 视频附件
 \attachpdffilefalse  %false 控制编译时不添加 视频附件
+
+
+
 \wdtexbooktheme{bodie} %
 \wdtexbookcolor{green} % green, violet, print
-\wdtitle{wangfan的Linux进程笔记}
+\ifattachpdffile
+\wdtitle{wangfan的Linux进程笔记--完整版}
+\else
+\wdtitle{wangfan的Linux进程笔记--精简版}
+\fi
 \wdedition{\href{https://github.com/wangfanstar/LinuxProcessNote}{\LaTeX}\quad \href{https://www.wangfanstar.top/categories/宋宝华/}{Web}\quad}
 \wdfirstauthor{}
 \wdfirstinstitute{}
@@ -36,6 +43,8 @@
 % \setcounter{page}{1}
 % \renewcommand{\thepage}{\arabic{page}}
 % ====== be sure to add this part ====%
+
+\input{Abstract.tex}
 \input{lesson1.tex}
 \input{lesson2.tex}
 \input{lesson3.tex}

@@ -1,60 +1,66 @@
 \begin {multicols}{2}
 \ttl@starttoc {default@1}
-\contentsline {part}{\numberline {I}进程课1天}{1}{part.1}
-\contentsline {chapter}{\numberline {1}进程的代码结构}{2}{chapter.1}
-\contentsline {section}{\numberline {1.1}进程控制块PCB与task\_struct}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}task\_struct的属性特点}{2}{section.1.2}
-\contentsline {chapter}{\numberline {2}进程的状态特征}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}进程状态切换}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}进程的内存泄露}{3}{section.2.2}
+\contentsline {part}{\numberline {I}前言}{1}{part.1}
 \ttl@stoptoc {default@1}
 \ttl@starttoc {default@2}
-\contentsline {part}{\numberline {II}进程课2天}{4}{part.2}
-\contentsline {chapter}{\numberline {3}进程出生}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}进程出生时资源处理}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}进程分裂时的资源变化--COW}{5}{section.3.2}
-\contentsline {section}{\numberline {3.3}第1个进程，进程0与进程1}{5}{section.3.3}
-\contentsline {chapter}{\numberline {4}进程运行}{6}{chapter.4}
-\contentsline {section}{\numberline {4.1}进程睡眠}{6}{section.4.1}
-\contentsline {section}{\numberline {4.2}进程等待}{6}{section.4.2}
-\contentsline {chapter}{\numberline {5}进程死亡}{7}{chapter.5}
-\contentsline {section}{\numberline {5.1}子死父收尸}{7}{section.5.1}
-\contentsline {section}{\numberline {5.2}父死子托孤}{7}{section.5.2}
+\contentsline {part}{\numberline {II}进程课1天}{2}{part.2}
+\contentsline {chapter}{\numberline {1}进程的代码结构}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}进程控制块PCB与task\_struct}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}task\_struct的属性特点}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}进程的状态特征}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}进程状态切换}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}进程的内存泄露}{4}{section.2.2}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
-\contentsline {part}{\numberline {III}进程课第3天}{8}{part.3}
-\contentsline {chapter}{\numberline {6}进程种类}{9}{chapter.6}
-\contentsline {chapter}{\numberline {7}进程调度的策略}{10}{chapter.7}
-\contentsline {section}{\numberline {7.1}RT进程调度}{10}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}SCHED\_FIFO}{10}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}SCHED\_RR}{10}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}NORMAL进程调度}{10}{section.7.2}
-\contentsline {chapter}{\numberline {8}调整进程优先级}{11}{chapter.8}
-\contentsline {section}{\numberline {8.1}nice}{11}{section.8.1}
+\contentsline {part}{\numberline {III}进程课2天}{5}{part.3}
+\contentsline {chapter}{\numberline {3}进程出生}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}进程出生时资源处理}{6}{section.3.1}
+\contentsline {section}{\numberline {3.2}进程分裂时的资源变化 -- COW}{6}{section.3.2}
+\contentsline {section}{\numberline {3.3}第1个进程，进程0与进程1}{6}{section.3.3}
+\contentsline {chapter}{\numberline {4}进程运行}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}进程睡眠}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}进程等待}{7}{section.4.2}
+\contentsline {chapter}{\numberline {5}进程死亡}{8}{chapter.5}
+\contentsline {section}{\numberline {5.1}子死父收尸}{8}{section.5.1}
+\contentsline {section}{\numberline {5.2}父死子托孤}{8}{section.5.2}
 \ttl@stoptoc {default@3}
 \ttl@starttoc {default@4}
-\contentsline {part}{\numberline {IV}进程课第4天}{12}{part.4}
-\contentsline {chapter}{\numberline {9}负载均衡}{13}{chapter.9}
-\contentsline {section}{\numberline {9.1}LINUX下的负载均衡处理对象}{13}{section.9.1}
-\contentsline {section}{\numberline {9.2}中断负载均衡}{13}{section.9.2}
-\contentsline {section}{\numberline {9.3}软中断负载均衡--rps}{14}{section.9.3}
-\contentsline {section}{\numberline {9.4}进程间（task\_struct）负载均衡}{15}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}linux负载均衡算法原则}{15}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}设置进程在指定CPU上运行}{15}{subsection.9.4.2}
-\contentsline {subsection}{\numberline {9.4.3}给进程指定比例的CPU负载--cgroup}{17}{subsection.9.4.3}
-\contentsline {chapter}{\numberline {10}实时系统}{18}{chapter.10}
+\contentsline {part}{\numberline {IV}进程课第3天}{9}{part.4}
+\contentsline {chapter}{\numberline {6}进程分类}{10}{chapter.6}
+\contentsline {chapter}{\numberline {7}进程调度策略}{11}{chapter.7}
+\contentsline {section}{\numberline {7.1}RT进程调度}{11}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}SCHED\_FIFO}{11}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}SCHED\_RR}{11}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}NORMAL进程调度}{11}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}CFS调度}{11}{subsection.7.2.1}
+\contentsline {chapter}{\numberline {8}调整优先级}{12}{chapter.8}
+\contentsline {section}{\numberline {8.1}用 renice 改变进程优先级}{12}{section.8.1}
+\contentsline {section}{\numberline {8.2}用 nice 改变进程优先级}{12}{section.8.2}
+\contentsline {section}{\numberline {8.3}用 chrt 改变进程优先级}{12}{section.8.3}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
-\contentsline {part}{\numberline {V}进程问题集锦}{19}{part.5}
-\contentsline {chapter}{\numberline {11}负载均衡}{20}{chapter.11}
+\contentsline {part}{\numberline {V}进程课第4天}{13}{part.5}
+\contentsline {chapter}{\numberline {9}负载均衡}{14}{chapter.9}
+\contentsline {section}{\numberline {9.1}LINUX下的负载均衡处理对象}{14}{section.9.1}
+\contentsline {section}{\numberline {9.2}中断负载均衡}{14}{section.9.2}
+\contentsline {section}{\numberline {9.3}软中断负载均衡--rps}{15}{section.9.3}
+\contentsline {section}{\numberline {9.4}进程间（task\_struct）负载均衡}{16}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}linux负载均衡算法原则}{16}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}设置进程在指定CPU上运行}{16}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.3}给进程指定比例的CPU负载--cgroup}{18}{subsection.9.4.3}
+\contentsline {chapter}{\numberline {10}实时系统}{19}{chapter.10}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
-\contentsline {part}{\numberline {VI}参考资料}{21}{part.6}
-\contentsline {chapter}{\numberline {12}参考文献}{22}{chapter.12}
-\contentsline {section}{\numberline {12.1}宋宝华相关网站资源}{22}{section.12.1}
-\contentsline {chapter}{\numberline {13}相关参考资料附件}{23}{chapter.13}
-\contentsline {section}{\numberline {13.1}pdf课件}{23}{section.13.1}
-\contentsline {section}{\numberline {13.2}代码网址}{23}{section.13.2}
-\contentsline {section}{\numberline {13.3}视频文件}{23}{section.13.3}
+\contentsline {part}{\numberline {VI}进程问题集锦}{20}{part.6}
+\contentsline {chapter}{\numberline {11}}{21}{chapter.11}
+\ttl@stoptoc {default@6}
+\ttl@starttoc {default@7}
+\contentsline {part}{\numberline {VII}参考资料}{22}{part.7}
+\contentsline {chapter}{\numberline {12}参考文献}{23}{chapter.12}
+\contentsline {section}{\numberline {12.1}宋宝华相关网站资源}{23}{section.12.1}
+\contentsline {section}{\numberline {12.2}代码网址}{23}{section.12.2}
+\contentsline {chapter}{\numberline {13}相关附件}{24}{chapter.13}
+\contentsline {section}{\numberline {13.1}pdf课件}{24}{section.13.1}
+\contentsline {section}{\numberline {13.2}视频文件}{24}{section.13.2}
 \end {multicols}
 \contentsfinish 
