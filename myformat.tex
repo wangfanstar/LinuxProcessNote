@@ -1,9 +1,12 @@
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TEX program = xelatex
+% !Mode:: "TeX:UTF-8"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 去除英文的figure 和 table 标记
 \renewcommand\figurename{}
 \renewcommand\tablename{}
 \renewcommand\theexample{ \arabic{chapter}-\arabic{example}~}%将例号1.1改成1-1
-\renewcommand\examplename{样例}
+\renewcommand\examplename{应用}
 %% 去掉章节标题中的数字
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ #1}{}}
 
@@ -97,3 +100,6 @@ stringstyle={\color{string!50!black}}}
 \def\inlinecode{\expandafter\lstinline[style=lesscolor]}
 
 \endinput
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:

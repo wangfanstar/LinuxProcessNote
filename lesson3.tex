@@ -1,0 +1,34 @@
+
+
+\partabstractfp{\textbf{进程第3天课程摘要}}
+\partabstractrp{本单讲述如何根据不同类型的进程分配不同策略的调度算法，调度算法的原理及应用对象。还有如何更改进程的调度策略}
+\partabstractlettrine{类}{型，此章讲述不同进程类型消耗的差异以及如何进行进程调度} % the first word of the abstract
+
+\part{进程课第3天}
+\chapter{进程种类}
+ CPU消耗与IO消耗型
+\begin{example*}
+  \wdexpbox
+  {\caption{ARM的big.LITTLE设计}}
+  {采用大核+小核的设计，大核功耗高，运算力强，用于处理CPU消耗性任务，小核功耗低，功耗小，用于处理I/O消耗性任务。实现功耗降低，但处理效果与全是大核处理一致的效果}
+\end{example*}
+
+\chapter{进程调度的策略}
+\section{RT进程调度}
+\subsection{SCHED\_FIFO}
+\subsection{SCHED\_RR}
+
+
+\section{NORMAL进程调度}
+\subsection{CFS调度}
+\clearpage
+
+
+\chapter{实践：调整进程优先级}
+\section{nice}
+%\section(程序运行中调整}
+%\section(程序运行中调整}
+\clearpage
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:
