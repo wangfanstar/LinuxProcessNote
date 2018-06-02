@@ -1,13 +1,43 @@
 
 
-\partabstractfp{\textbf{进程问题集锦} }
+\partabstractfp{}
 \partabstractrp{}
-\partabstractlettrine{F}{AQ，本章记录课间和课后宋老师与我们之间的问题} % the first word of the abstract
+\partabstractlettrine{F}{AQ，本章记录课间和课后宋老师以及同学们答疑} % the first word of the abstract
 
 \part{进程问题集锦}
 
 
-\chapter{}
+\chapter{课后答疑}
+
+以下问题为宋老师在微信答疑群中回答记录，微信群一直存在，问题也不定期提出，此部分内容会随之更新。
+\begin{enumerate}
+  \item 
+\begin{tcolorbox}[colback=green!5,colframe=green!75!black]
+\heiti{Q: rps后，非多队列网卡，中断会再给每个核发中断来派发软中断？}
+\tcblower
+A: 中断只发一个core，这个core自己给别的core发核间中断
+\end{tcolorbox}
+
+  \item 
+\begin{tcolorbox}[colback=green!5,colframe=green!75!black]
+\heiti{Q: rt补丁，是不是只有RT\_FULL支持优先级反转？}
+\tcblower
+A: 不是，不需要rt补丁就支持优先级继承，早就Merge到了mainline。\\
+不叫支持优先级反转，反转是个问题，继承是解决它的方法。反转是个现象，不存在支持不支持。\\
+你的问题是错误的。
+\end{tcolorbox}
+
+
+  \item
+\begin{tcolorbox}[colback=green!5,colframe=green!75!black]
+\heiti{Q: 所以softirq的优先级都是相同的吗？}
+\tcblower
+A: 不是的，它是一个bit的设置，检查哪个bit被设置，肯定是有先后顺序。挨个检查哪个bit的。不过这个不是关键点。你关心延迟的实时性的时候，你根本就消灭了softirq.
+\end{tcolorbox}
+
+
+\end{enumerate}
+
 %%% Local Variables:
 %%% TeX-master: "main"
 %%% End:

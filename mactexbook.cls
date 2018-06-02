@@ -119,7 +119,7 @@
                 anchorcolor=black,
                 citecolor=darkblue]{hyperref} %bookmarks
 %\RequirePackage[xetex]{hyperref} %bookmarks
-\hypersetup{pdfencoding=auto,bookmarksdepth=4,bookmarksopenlevel=0，
+\hypersetup{pdfencoding=auto,bookmarksdepth=4,bookmarksopenlevel=0,
              pdfauthor={wangfan},pdftitle={linux process note},pdfsubject={linux},pdfkeywords={linux}}
 \RequirePackage{attachfile2}
 \RequirePackage[open,openlevel=0,atend]{bookmark}

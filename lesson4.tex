@@ -16,12 +16,21 @@
 \section{LINUX下的负载均衡处理对象}
 负载均衡是最大化利用CPU资源的方法，要求在有任务(task\_struct，中断，软中断)执行时，所有的CPU都能利用上，不产生有任务处理却有CPU闲置的情况。首先从任务的优先级的角度来看，CPU处理的任务只有下面4种优先级，按高到低依次是：
 
-\begin{enumerate}
-  \item 中断
-  \item 软中断
-  \item 处于spinlock等关闭了调度区间的进程
-  \item 普通进程
-\end{enumerate}
+
+\begin{table}[!htbp]
+\stabbox{3.0cm}
+{\caption{Linux CPU对应的4类不同优先级区间}\label{linux_pri_4type_table}}
+{\begin{tabular*}{\cflwidth}{@{\hspace{5pt}}@{\extracolsep{\fill}}*{3}{@{\hspace{-3pt}}c}}
+    \heiti{优先级 } & \heiti{Linux 中 CPU所处状态   }              \\
+    %\toprule
+    1 & 中断                 \\
+    2 & 软中断                  \\
+    3 & 处于spinlock等关闭了调度区间的进程                   \\
+    4 & 普通进程                  \\
+\end{tabular*}
+\floatfoot*{附注: 优先级数字越低优先级越高：中断 > 软中断  > spinlock > 普通进程}
+}
+\end{table}
 
 \section{中断负载均衡}
 在TOP命令中，cpu时间占用中有一列是\textbf{hi}和\textbf{si}，分别对应中断和软中断。说明cpu时间除了在task\_struct上，还有可能花在中断和软中断，当网络流量比较大时，cpu花在中断和软中断的时间比较大，可以考虑中断负载均衡。\\
@@ -93,7 +102,7 @@ linux下所有CPU核会进行分布式的PUSH和PULL操作，当CPU核空闲时�
 
 \begin{example*}
   \wdexpbox
-  {\caption{由于负载均衡导致cpu占用率200\%}}
+  {\caption{cpu占用率200\%的原因}}
   {在一个程序中起2个进程，每个进程都在做CPU消耗型操作（代码中调用while(1)死循环），在进程执行的过程中会自动将进程分配到2个CPU核上进行处理。可以通过查看CPU占用率和时间占用情况来验证。分配到两个CPU核后，CPU占用率会上升到200\%，用time计算程序的占用时间，真实时间是系统时间的一半，因为系统时间是单独统计每个CPU核上占用的时间，2个CPU核上会统计2次，显示的结果就是系统时间是真实时间的2倍。}
 \end{example*}
 
@@ -195,6 +204,38 @@ cgroup主要是设置以下3个属性，在\fbox{/sys/fs/cgroup/cpu}目录mkdir�
 
 
 \chapter{实时系统}
+\section{Real Time 实时系统的含义}
+实时不是越快越好，是指可预期性。比如发射导弹时，必须保证在截止期限内发射出去，否则后果可能是灾难性的。硬实时强调在恶劣的情况下，从唤醒到任务真正执行之间的时间是可预期的，可以保证在预期的时间内执行到。Linux设计不保证是可预期的，因为Linux在中断，软中断，及spinlock的区间时是不可抢占的，这些区间内的执行时间是不可预期的。linux不是硬实时的系统，是软实时。
+\section{抢占：Linux无法硬实时的原因}
+要实现实时，最重要的就是要实现任何时刻都可以在预定期限内实现进程抢占，来保证进程可以在预期内执行。Linux无法硬实时的原因就是Linux的CPU在的4类区间有3类是无法进行抢占的，如果CPU进入了这3类区间，Linux是无法保证在这3类区间内的运行时间的。所以无法达到硬实时的要求。\\Linux
+抢占的时机很多，我们主要记住不可抢占的时机：1、中断，2、软中断，3、spinlock区间的进程。
+如果在这三类任务时间内唤起了高优先级的任务，任务是不能抢占的，只有当CPU脱离了这三类区间后，高优先级的任务才可以进行抢占。
+如\ref{linux_pri_4type_table}所示，如果在一二三类区间唤醒了高优先级的进程，当前无法进行抢占，只有当CPU退回到第4类普通进程区间时才开始抢占。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./figure/linux_rt_4type_preempt.png}
+  \caption{Linux的4类抢占区间}\label{linux_rt_4type_preempt}
+\end{figure}
+
+\section{Linux实时补丁的用法}
+linux的RT版本，https://wiki.linuxfoundation.org/realtime/start 这个项目是实现Linux的实时版本。主要原理是将Linux的中断线程化，即把一二三类区间都转换成四类区间。相应的linux 源码RT版本只针对特定的几个版本，使用方法是将代码中的RT补丁merge到对应的源码中，linux的RT可以做到100us量级的实时性能，（vxworks是几个us)，相应的吞吐性能也会下降。
+
+安装linux的调度器的抢占模型选项
+\begin{enumerate}
+  \item server版本 （不抢占）
+  \item desktop版本 （kernel 内不抢占）
+  \item no-latency desktop (kernel 内可抢占，手机桌面一般用此模型)
+  \item completely preemption (kernel 内一二三类中断软中断都可抢占)
+\end{enumerate}
+
+
+安装RT补丁后还是会有很多的代码坑需要处理，比如内存管理方面，Linux的内存分配是LAZY式，当用到时才实际分配，安装实时补丁后有可能出现写内存时内存实际还未分配的情形。
+
+\begin{example*}
+  \wdexpbox
+  {\caption{单反上的实时系统应用}}
+  {实时系统的另一个应用场景是安装2个系统：实时系统和Linux，比如单反之前用的都是实时操作系统，现在为了增加蓝牙，wifi等功能，用一个核执行实时系统，另一个核用Linux来实现蓝牙等功能}
+\end{example*}
 
 %%% Local Variables:
 %%% TeX-master: "main"
