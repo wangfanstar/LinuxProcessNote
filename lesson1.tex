@@ -11,10 +11,10 @@
 进程是一个资源封装的单位，资源指占用的内存，文件系统，信号及处理方法。线程是调度执行的单元。一个进程区别与另一个进程的标记就是资源。linux操作系统是可以做到进程与进程之间的资源隔离。进程的描述就是资源的描述。PCB （PROCESS CONTROL BLOCK) 在不同操作系统中用于描述进程，在Linux的PCB就是用task\_struct来描述。如\ref{linux_pcb}所示，图中列出了主要对应包含的资源种类及作用。
 \begin{figure}[H]
  \wdfigbox
-  {\caption{fork进程前后内存映射关系}\label{linux_pcb}}
+  {\caption{进程控制块PCB}\label{linux_pcb}}
   {
   \includegraphics[width=9cm]{./figure/linux_pcb.png}
-  \floatfoot{注:第一列为虚拟地址，第二列为物理地址，最后一列对应内存的读写权限 }
+  \floatfoot{注:即linux中的task\_struct }
   }
 \end{figure}
 \begin{description}
@@ -29,18 +29,78 @@
 
  
 
- 
-
-
-
 
 
 \section{task\_struct的属性特点}
+\subsection{fork炸弹让linux死机}
+linux下著名的fork炸弹，一敲就让Linux死机。是利用不断利用fork产生进程把pid耗尽，其命令如下：
+\begin{example*}
+  \wdexpbox
+  {\caption{fork炸弹}}
+  {linux下著名的fork炸弹，一敲就让Linux死机。\\
+  \textcolor[rgb]{1.00,0.00,0.00}{\#linux fork 炸弹}\\  
+  \textcolor[rgb]{1.00,0.00,0.00}{\textbf{:()\{:\|:\&\};: } }
+  }
+\end{example*}
 
+\begin{latexcmd}[label=linux fork 炸弹解析]
+: 函数名为冒号
 
+() 函数参数定义
+
+{} 函数定义
+
+：调用自己
+
+|：递归调用自己
+
+& 后台执行
+
+; 函数结束
+
+： 调用函数：
+\end{latexcmd}
+
+\subsection{pid数量限制导致安卓的一键root}
+安卓的2.2.1之前的版本被发现一个漏洞，很容易就被一键root，安卓的调试软件adb刚开始时有root权限，之后adb调用api setuid(shell) 把自己从root用户降为shell用户。谷歌的工程师在调用时没有检查setuid的返回值，即默认setuid总是可以成功。黑客们利用uid数量有限制的属性，将shell用户内的pid进程全部用完，这样调用setuid时是无法成功的，但因为没有检查返回值，导致adb调用setuid(shell) 后没有降权成功，还是有root权限。这就是Android著名的提权漏洞：rageagainstthecage。2.2之后的安卓版本修复了此漏洞，方法是检查setuid的返回值。
+
+查看Linux中最大Pid数量的命令如下：
+\begin{lstlisting}[language={bash}]
+wangfan@wangfan-VirtualBox:~$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 15723
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 15723
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+\end{lstlisting}
+\subsection{linux进程task\_struct的三种数据结构}
+在linux代码中会涉及各种对task\_struct的引用关系，比如调度算法中会将task\_struct挂在链表上，父子进程的关系用树来描述，CFS调度算法会用到红黑树，通过pid查找进程则是用hash表的结构。其对应的数据结构如\ref{task_datastructure}所示
+
+\begin{figure}[H]
+ \wdfigbox
+  {\caption{task\_struct汲及到的数据结构}\label{task_datastructure}}
+  {
+  \includegraphics[width=9cm]{./figure/task_datastructure.png}
+  \floatfoot{注: 每种数据结构选择都是根据应用场景的需求来选择实现目的效率最高的数据结构}
+  }
+\end{figure}
 \chapter{进程的状态特征}
-
+linux进程的生命周期对应6个状态，
 \section{进程状态切换}
+\subsection{进程运行时的3个基本状态}
+操作系统包括实时系统对应进程一般都有3个状态，进程在有CPU时对应运行态，无CPU时对应就绪态和睡眠态。就绪态指所有资源都准备好，只要有CPU就可以运行了。睡眠指有资源还未准备好，比如读串口数据时，数据还未发送。此时有CPU也无法运行，需要等资源准备好后变成就绪态，然后得到CPU后才能变成运行态，其转换关系如\ref{}所示。
+
 \section{进程的内存泄露}
 
 %%% Local Variables:
