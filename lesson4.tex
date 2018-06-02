@@ -1,6 +1,6 @@
 
 
-\partabstractfp{\textbf{进程第4天课程摘要} 这里讲的是CPU处理的负载，对应负载指CPU处理的任务\\
+\partabstractfp{这里讲的是CPU处理的负载，对应负载指CPU处理的任务\\
 1. linux的4种不同优先级任务是什么\\
 2. 不同优先级任务间的抢占原则是什么？\\
 3. 负载均衡的不同类型及使用方法。}
@@ -87,16 +87,16 @@ wangfan@wangfan-VirtualBox:~$ cat /proc/softirqs
 linux下所有CPU核会进行分布式的PUSH和PULL操作，当CPU核空闲时会向周围的核PULL任务来执行，CPU核本身在执行任务时也会PUSH任务到其他核。
 每个核执行同样的负载均衡算法，负载均衡包括RT任务的负载均衡和普通任务的负载均衡。
 
-\textbf{RT任务的负载均衡}算法是将N个优先级最高的RT分布到N个核
+RT任务的负载均衡 算法是将N个优先级最高的RT分布到N个核。
 
 \verb|pull_rt_task(); push_rt_task()|
 
-\textbf{普通任务负载均衡}有三种：IDLE式负载均衡，周期性负载均衡，FORK和EXEC式负载均衡
+普通任务负载均衡有三种：IDLE式负载均衡，周期性负载均衡，FORK和EXEC式负载均衡
 
 \begin{description}
-  \item[\textbf{1 周期性负载均衡:}] 时钟tick的时间点上CPU核查询自己是否很闲，周围核是否很忙，是则用PULL将周围核的任务拉过来处理。
-  \item[\textbf{2 IDLE式负载均衡:}] 当CPU核在IDLE时会查询周围核是否在忙，如果旁边核比较忙时，自动PULL旁边核的task\_struct任务来执行。
-  \item[\textbf{3 FORK和EXEC式负载均衡:}] FORK和EXEC创建一个新的进程时，Linux会自动找一个最闲的核将FORK和EXEC新创建出的进程放在上面处理。
+  \item[\heiti{1 周期性负载均衡:}] 时钟tick的时间点上CPU核查询自己是否很闲，周围核是否很忙，是则用PULL将周围核的任务拉过来处理。
+  \item[\heiti{2 IDLE式负载均衡:}] 当CPU核在IDLE时会查询周围核是否在忙，如果旁边核比较忙时，自动PULL旁边核的task\_struct任务来执行。
+  \item[\heiti{3 FORK和EXEC式负载均衡:}] FORK和EXEC创建一个新的进程时，Linux会自动找一个最闲的核将FORK和EXEC新创建出的进程放在上面处理。
 \end{description}
 以上处理由核与核之间分布式负载均衡处理是自动进行的。
 

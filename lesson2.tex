@@ -9,6 +9,8 @@
 \chapter{进程出生}
 \section{进程出生时资源处理}
 
+
+
 \section{进程分裂时的资源变化 -- COW}
 COW(copy-on-write)技术是进程fork时采用的，涉及到虚拟内存和实际内存的映射关系。采用了COW技术后，进程处理会有一些现象需要重点注意。比如fork之后的父子进程读写同一个全局变量时，一个变量在不同的进程会显示出不同的值。
 \subsection{COW 现象代码}
@@ -73,14 +75,10 @@ COW技术必须借助MMU（内存管理单元）来实现。COW是通过改变�
   \floatfoot{注:mm为同一份，没有进行拷贝  }
   }
 \end{figure}
-vfork的特点：vfork会阻塞父进程，只有等子进程完全退出后才执行父进程。视频文件如下所示：
+vfork的特点：vfork会阻塞父进程，只有等子进程完全退出后才执行父进程。vfork特性演示视频如下所示：
 
 \begin{tcolorbox}[colback=blue!5,colframe=blue!75!black,title=vfork 视频]
-\ifattachpdffile
-\textattachfile{2- vfork.avi}{\textcolor[rgb]{0.00,0.00,0.55}{\textbf{vfork与COW区别}}}
-\else
-\videowarn
-\fi
+\videoattach{2- vfork.avi}{vfork与COW区别}
 \end{tcolorbox}
 
 

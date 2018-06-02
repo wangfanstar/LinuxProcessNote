@@ -6,68 +6,68 @@
 \contentsline {part}{\numberline {II}进程课第1天}{2}{part.2}
 \contentsline {chapter}{\numberline {1}进程的代码结构}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}进程控制块PCB与task\_struct}{3}{section.1.1}
-\contentsline {section}{\numberline {1.2}task\_struct的属性特点}{3}{section.1.2}
-\contentsline {chapter}{\numberline {2}进程的状态特征}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}进程状态切换}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}进程的内存泄露}{4}{section.2.2}
+\contentsline {section}{\numberline {1.2}task\_struct的属性特点}{4}{section.1.2}
+\contentsline {chapter}{\numberline {2}进程的状态特征}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}进程状态切换}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}进程的内存泄露}{5}{section.2.2}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
-\contentsline {part}{\numberline {III}进程课第2天}{5}{part.3}
-\contentsline {chapter}{\numberline {3}进程出生}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}进程出生时资源处理}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}进程分裂时的资源变化 -- COW}{6}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}COW 现象代码}{6}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}COW 实现技术原理}{7}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}无法用COW的情况：VFORK}{7}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}第1个进程，进程0与进程1}{8}{section.3.3}
-\contentsline {chapter}{\numberline {4}进程运行}{9}{chapter.4}
-\contentsline {section}{\numberline {4.1}进程睡眠}{9}{section.4.1}
-\contentsline {section}{\numberline {4.2}进程等待}{9}{section.4.2}
-\contentsline {chapter}{\numberline {5}进程死亡}{10}{chapter.5}
-\contentsline {section}{\numberline {5.1}子死父收尸}{10}{section.5.1}
-\contentsline {section}{\numberline {5.2}父死子托孤}{10}{section.5.2}
+\contentsline {part}{\numberline {III}进程课第2天}{6}{part.3}
+\contentsline {chapter}{\numberline {3}进程出生}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}进程出生时资源处理}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}进程分裂时的资源变化 -- COW}{7}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}COW 现象代码}{7}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}COW 实现技术原理}{8}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}无法用COW的情况：VFORK}{8}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}第1个进程，进程0与进程1}{9}{section.3.3}
+\contentsline {chapter}{\numberline {4}进程运行}{10}{chapter.4}
+\contentsline {section}{\numberline {4.1}进程睡眠}{10}{section.4.1}
+\contentsline {section}{\numberline {4.2}进程等待}{10}{section.4.2}
+\contentsline {chapter}{\numberline {5}进程死亡}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}子死父收尸}{11}{section.5.1}
+\contentsline {section}{\numberline {5.2}父死子托孤}{11}{section.5.2}
 \ttl@stoptoc {default@3}
 \ttl@starttoc {default@4}
-\contentsline {part}{\numberline {IV}进程课第3天}{11}{part.4}
-\contentsline {chapter}{\numberline {6}进程分类}{12}{chapter.6}
-\contentsline {section}{\numberline {6.1}CPU消耗与IO消耗型}{12}{section.6.1}
-\contentsline {chapter}{\numberline {7}进程调度策略}{13}{chapter.7}
-\contentsline {section}{\numberline {7.1}RT进程调度}{13}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}SCHED\_FIFO}{13}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}SCHED\_RR}{13}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}NORMAL进程调度}{13}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}CFS调度}{13}{subsection.7.2.1}
-\contentsline {chapter}{\numberline {8}调整优先级}{14}{chapter.8}
-\contentsline {section}{\numberline {8.1}用 renice 改变进程优先级}{14}{section.8.1}
-\contentsline {section}{\numberline {8.2}用 nice 改变进程优先级}{14}{section.8.2}
-\contentsline {section}{\numberline {8.3}用 chrt 改变进程优先级}{14}{section.8.3}
+\contentsline {part}{\numberline {IV}进程课第3天}{12}{part.4}
+\contentsline {chapter}{\numberline {6}进程分类}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}CPU消耗与IO消耗型}{13}{section.6.1}
+\contentsline {chapter}{\numberline {7}进程调度策略}{14}{chapter.7}
+\contentsline {section}{\numberline {7.1}RT进程调度}{14}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}SCHED\_FIFO}{14}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}SCHED\_RR}{14}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}NORMAL进程调度}{14}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}CFS调度}{14}{subsection.7.2.1}
+\contentsline {chapter}{\numberline {8}调整优先级}{15}{chapter.8}
+\contentsline {section}{\numberline {8.1}用 renice 改变进程优先级}{15}{section.8.1}
+\contentsline {section}{\numberline {8.2}用 nice 改变进程优先级}{15}{section.8.2}
+\contentsline {section}{\numberline {8.3}用 chrt 改变进程优先级}{15}{section.8.3}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
-\contentsline {part}{\numberline {V}进程课第4天}{15}{part.5}
-\contentsline {chapter}{\numberline {9}负载均衡}{16}{chapter.9}
-\contentsline {section}{\numberline {9.1}LINUX下的负载均衡处理对象}{16}{section.9.1}
-\contentsline {section}{\numberline {9.2}中断负载均衡}{16}{section.9.2}
-\contentsline {section}{\numberline {9.3}软中断负载均衡--rps}{17}{section.9.3}
-\contentsline {section}{\numberline {9.4}进程间（task\_struct）负载均衡}{18}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}linux负载均衡算法原则}{18}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}设置进程在指定CPU上运行}{18}{subsection.9.4.2}
-\contentsline {subsection}{\numberline {9.4.3}给进程指定比例的CPU负载--cgroup}{20}{subsection.9.4.3}
-\contentsline {chapter}{\numberline {10}实时系统}{21}{chapter.10}
-\contentsline {section}{\numberline {10.1}Real Time 实时系统的含义}{21}{section.10.1}
-\contentsline {section}{\numberline {10.2}抢占：Linux无法硬实时的原因}{21}{section.10.2}
-\contentsline {section}{\numberline {10.3}Linux实时补丁的用法}{22}{section.10.3}
+\contentsline {part}{\numberline {V}进程课第4天}{16}{part.5}
+\contentsline {chapter}{\numberline {9}负载均衡}{17}{chapter.9}
+\contentsline {section}{\numberline {9.1}LINUX下的负载均衡处理对象}{17}{section.9.1}
+\contentsline {section}{\numberline {9.2}中断负载均衡}{17}{section.9.2}
+\contentsline {section}{\numberline {9.3}软中断负载均衡--rps}{18}{section.9.3}
+\contentsline {section}{\numberline {9.4}进程间（task\_struct）负载均衡}{19}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}linux负载均衡算法原则}{19}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}设置进程在指定CPU上运行}{19}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.3}给进程指定比例的CPU负载--cgroup}{21}{subsection.9.4.3}
+\contentsline {chapter}{\numberline {10}实时系统}{22}{chapter.10}
+\contentsline {section}{\numberline {10.1}Real Time 实时系统的含义}{22}{section.10.1}
+\contentsline {section}{\numberline {10.2}抢占：Linux无法硬实时的原因}{22}{section.10.2}
+\contentsline {section}{\numberline {10.3}Linux实时补丁的用法}{23}{section.10.3}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
-\contentsline {part}{\numberline {VI}进程问题集锦}{24}{part.6}
-\contentsline {chapter}{\numberline {11}课后答疑}{25}{chapter.11}
+\contentsline {part}{\numberline {VI}进程问题集锦}{25}{part.6}
+\contentsline {chapter}{\numberline {11}课后答疑}{26}{chapter.11}
 \ttl@stoptoc {default@6}
 \ttl@starttoc {default@7}
-\contentsline {part}{\numberline {VII}参考资料}{26}{part.7}
-\contentsline {chapter}{\numberline {12}参考文献}{27}{chapter.12}
-\contentsline {section}{\numberline {12.1}宋宝华相关网站资源}{27}{section.12.1}
-\contentsline {section}{\numberline {12.2}代码网址}{27}{section.12.2}
-\contentsline {chapter}{\numberline {13}相关附件}{28}{chapter.13}
-\contentsline {section}{\numberline {13.1}pdf课件}{28}{section.13.1}
-\contentsline {section}{\numberline {13.2}视频文件}{28}{section.13.2}
+\contentsline {part}{\numberline {VII}参考资料}{27}{part.7}
+\contentsline {chapter}{\numberline {12}参考文献}{28}{chapter.12}
+\contentsline {section}{\numberline {12.1}宋宝华相关网站资源}{28}{section.12.1}
+\contentsline {section}{\numberline {12.2}代码网址}{28}{section.12.2}
+\contentsline {chapter}{\numberline {13}相关附件}{29}{chapter.13}
+\contentsline {section}{\numberline {13.1}pdf课件}{29}{section.13.1}
+\contentsline {section}{\numberline {13.2}视频文件}{29}{section.13.2}
 \end {multicols}
 \contentsfinish 
