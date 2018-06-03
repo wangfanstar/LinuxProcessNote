@@ -131,7 +131,7 @@ fork执行后，就会变成2个进程返回，而不是一个进程返回两次
 }
 
 \section{子死父收尸}
-linux中子进程首先变成僵尸，父进程通过wait来获取子进程的死亡原因。调用的API如\ref{child_wait}所示，父进程通过分析子进程的退出码就可以知道具体的退出原因了。
+linux中子进程死亡时首先变成僵尸，父进程通过wait来获取子进程的死亡原因。调用的API如\ref{child_wait}所示，父进程通过分析子进程的退出码就可以知道具体的退出原因了。
 
 \begin{figure}[H]
  \wdfigbox
@@ -146,7 +146,7 @@ linux中子进程首先变成僵尸，父进程通过wait来获取子进程的�
 \videoattach{1- child-waited-by-parent.avi}{父进程获取子进程死亡原因视频演示}
 \end{tcolorbox}
 \section{父死子托孤}
-任何一个进程死亡后有个原则，首先托付给subreaper，如果没有则托付给init。如\ref{child_process_died}所示。进程可以通过API来设置自己为subreaper。subreaper要注意调用wait来处理可能托付过来的僵尸进程。
+任何一个进程死亡后有个原则，首先托付给subreaper，如果没有subreaper则托付给init。如\ref{child_process_died}所示。进程可以通过API来设置自己为subreaper。subreaper要注意调用wait来处理可能托付过来的僵尸进程。
 \begin{figure}[H]
  \wdfigbox
   {\caption{进程死亡后挂接关系}\label{child_process_died}}

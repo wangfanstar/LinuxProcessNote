@@ -9,7 +9,7 @@
 \chapter{课后答疑}
 
 
-~\\以下问题为宋老师在微信答疑群中回答记录，微信群一直存在，问题也不定期提出，此部分内容会随之更新。
+~\\以下问题为宋老师在微信答疑群中回答记录，微信群问题也不定期提出，此部分内容会随之更新。
 \begin{enumerate}
   \item
 \begin{tcolorbox}[colback=green!5,colframe=green!75!black]
@@ -34,6 +34,22 @@ A: 不是，不需要rt补丁就支持优先级继承，早就Merge到了mainlin
 \tcblower
 A: 不是的，它是一个bit的设置，检查哪个bit被设置，肯定是有先后顺序。挨个检查哪个bit的。不过这个不是关键点。你关心延迟的实时性的时候，你根本就消灭了softirq.
 \end{tcolorbox}
+
+  \item
+\begin{tcolorbox}[colback=green!5,colframe=green!75!black]
+\heiti{Q: 内核管理多核好理解，但内核如何管理多CPU？}
+\tcblower
+A: 异构多os和Linux没关系，那是多os之间的问题，不是Linux管理范畴，几个OS一个通信方法即可。
+\end{tcolorbox}
+
+  \item
+\begin{tcolorbox}[colback=green!5,colframe=green!75!black]
+\heiti{Q: cfs调度单位是task\_struct，那像HMP EAS这些调度器单位是什么？}
+\tcblower
+A: 调度单元与调度算法无关，你说的调度器和我们说的调度器不一定是一个意思。调度单元就算线程。这个不以任何操作系统，任何算法为转移。
+\end{tcolorbox}
+
+
 
 
 \end{enumerate}
