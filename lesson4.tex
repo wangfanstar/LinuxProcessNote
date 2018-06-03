@@ -211,11 +211,11 @@ cgroup主要是设置以下3个属性，在\fbox{/sys/fs/cgroup/cpu}目录mkdir�
 抢占的时机很多，我们主要记住不可抢占的时机：1、中断，2、软中断，3、spinlock区间的进程。
 如果在这三类任务时间内唤起了高优先级的任务，任务是不能抢占的，只有当CPU脱离了这三类区间后，高优先级的任务才可以进行抢占。
 如\ref{linux_pri_4type_table}所示，如果在一二三类区间唤醒了高优先级的进程，当前无法进行抢占，只有当CPU退回到第4类普通进程区间时才开始抢占。
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=12cm]{./figure/linux_rt_4type_preempt.png}
-  \caption{Linux的4类抢占区间}\label{linux_rt_4type_preempt}
-\end{figure}
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=12cm]{./figure/linux_rt_4type_preempt.png}
+%  \caption{Linux的4类抢占区间}\label{linux_rt_4type_preempt}
+%\end{figure}
 
 \section{Linux实时补丁的用法}
 linux的RT版本，https://wiki.linuxfoundation.org/realtime/start 这个项目是实现Linux的实时版本。主要原理是将Linux的中断线程化，即把一二三类区间都转换成四类区间。相应的linux 源码RT版本只针对特定的几个版本，使用方法是将代码中的RT补丁merge到对应的源码中，linux的RT可以做到100us量级的实时性能，（vxworks是几个us)，相应的吞吐性能也会下降。
