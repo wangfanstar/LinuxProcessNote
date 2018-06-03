@@ -11,75 +11,75 @@
 \contentsline {subsection}{\numberline {1.2.2}pid数量限制导致安卓的一键root}{4}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}linux的pid与tgid}{5}{subsection.1.2.3}
 \contentsline {subsection}{\numberline {1.2.4}linux进程task\_struct的三种数据结构}{5}{subsection.1.2.4}
-\contentsline {chapter}{\numberline {2}进程的状态特征}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}进程状态切换}{6}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}进程运行时的3个基本状态}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}linux进程扩展的6个状态}{6}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}linux进程状态的联系和区别}{7}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}进程的内存泄露}{7}{section.2.2}
+\contentsline {chapter}{\numberline {2}进程的状态特征}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}进程状态切换}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}进程运行时的3个基本状态}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}linux进程扩展的6个状态}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}linux进程状态的联系和区别}{8}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}进程的内存泄露}{9}{section.2.2}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
-\contentsline {part}{\numberline {III}进程课第2天}{9}{part.3}
-\contentsline {chapter}{\numberline {3}进程出生}{10}{chapter.3}
-\contentsline {section}{\numberline {3.1}进程出生时资源处理}{10}{section.3.1}
-\contentsline {section}{\numberline {3.2}进程分裂时的资源变化 -- COW}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}COW 现象代码}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}COW 实现技术原理}{12}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}无法用COW的情况：VFORK}{12}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}强制共享资源--线程}{13}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}第1个进程，进程0与进程1}{13}{section.3.3}
-\contentsline {chapter}{\numberline {4}进程运行}{14}{chapter.4}
-\contentsline {chapter}{\numberline {5}进程死亡}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}子死父收尸}{15}{section.5.1}
-\contentsline {section}{\numberline {5.2}父死子托孤}{16}{section.5.2}
+\contentsline {part}{\numberline {III}进程课第2天}{10}{part.3}
+\contentsline {chapter}{\numberline {3}进程出生}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}进程出生时资源处理}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}进程分裂时的资源变化 -- COW}{12}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}COW 现象代码}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}COW 实现技术原理}{13}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}无法用COW的情况：VFORK}{13}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}强制共享资源--线程}{14}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}第1个进程，进程0与进程1}{14}{section.3.3}
+\contentsline {chapter}{\numberline {4}进程运行}{16}{chapter.4}
+\contentsline {chapter}{\numberline {5}进程死亡}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}子死父收尸}{17}{section.5.1}
+\contentsline {section}{\numberline {5.2}父死子托孤}{18}{section.5.2}
 \ttl@stoptoc {default@3}
 \ttl@starttoc {default@4}
-\contentsline {part}{\numberline {IV}进程课第3天}{17}{part.4}
-\contentsline {chapter}{\numberline {6}进程分类}{18}{chapter.6}
-\contentsline {section}{\numberline {6.1}CPU消耗与IO消耗型}{18}{section.6.1}
-\contentsline {section}{\numberline {6.2}应用：arm大小核设计}{18}{section.6.2}
-\contentsline {chapter}{\numberline {7}进程调度策略}{19}{chapter.7}
-\contentsline {section}{\numberline {7.1}RT进程调度}{20}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}SCHED\_FIFO}{20}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}SCHED\_RR}{20}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}NORMAL进程调度}{20}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}动态惩罚与奖励机制}{20}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}CFS调度}{21}{subsection.7.2.2}
-\contentsline {chapter}{\numberline {8}调整优先级}{22}{chapter.8}
-\contentsline {section}{\numberline {8.1}用 nice 改变进程优先级}{22}{section.8.1}
-\contentsline {section}{\numberline {8.2}用 renice 改变进程优先级}{22}{section.8.2}
-\contentsline {section}{\numberline {8.3}用 chrt 改变进程优先级}{23}{section.8.3}
+\contentsline {part}{\numberline {IV}进程课第3天}{19}{part.4}
+\contentsline {chapter}{\numberline {6}进程分类}{20}{chapter.6}
+\contentsline {section}{\numberline {6.1}CPU消耗与IO消耗型}{20}{section.6.1}
+\contentsline {section}{\numberline {6.2}应用：arm大小核设计}{20}{section.6.2}
+\contentsline {chapter}{\numberline {7}进程调度策略}{21}{chapter.7}
+\contentsline {section}{\numberline {7.1}RT进程调度}{22}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}SCHED\_FIFO}{22}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}SCHED\_RR}{22}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}NORMAL进程调度}{22}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}动态惩罚与奖励机制}{22}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}CFS调度}{23}{subsection.7.2.2}
+\contentsline {chapter}{\numberline {8}调整优先级}{24}{chapter.8}
+\contentsline {section}{\numberline {8.1}用 nice 改变进程优先级}{24}{section.8.1}
+\contentsline {section}{\numberline {8.2}用 renice 改变进程优先级}{24}{section.8.2}
+\contentsline {section}{\numberline {8.3}用 chrt 改变进程优先级}{25}{section.8.3}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
-\contentsline {part}{\numberline {V}进程课第4天}{25}{part.5}
-\contentsline {chapter}{\numberline {9}负载均衡}{26}{chapter.9}
-\contentsline {section}{\numberline {9.1}LINUX下的负载均衡处理对象}{26}{section.9.1}
-\contentsline {section}{\numberline {9.2}中断负载均衡}{26}{section.9.2}
-\contentsline {section}{\numberline {9.3}软中断负载均衡--rps}{27}{section.9.3}
-\contentsline {section}{\numberline {9.4}进程间（task\_struct）负载均衡}{28}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}linux负载均衡算法原则}{28}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}设置进程在指定CPU上运行}{28}{subsection.9.4.2}
-\contentsline {subsection}{\numberline {9.4.3}给进程指定比例的CPU负载--cgroup}{30}{subsection.9.4.3}
-\contentsline {chapter}{\numberline {10}实时系统}{31}{chapter.10}
-\contentsline {section}{\numberline {10.1}Real Time 实时系统的含义}{31}{section.10.1}
-\contentsline {section}{\numberline {10.2}抢占：Linux无法硬实时的原因}{31}{section.10.2}
-\contentsline {section}{\numberline {10.3}Linux实时补丁的用法}{32}{section.10.3}
+\contentsline {part}{\numberline {V}进程课第4天}{27}{part.5}
+\contentsline {chapter}{\numberline {9}负载均衡}{28}{chapter.9}
+\contentsline {section}{\numberline {9.1}LINUX下的负载均衡处理对象}{28}{section.9.1}
+\contentsline {section}{\numberline {9.2}中断负载均衡}{28}{section.9.2}
+\contentsline {section}{\numberline {9.3}软中断负载均衡--rps}{29}{section.9.3}
+\contentsline {section}{\numberline {9.4}进程间（task\_struct）负载均衡}{30}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}linux负载均衡算法原则}{30}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}设置进程在指定CPU上运行}{30}{subsection.9.4.2}
+\contentsline {subsection}{\numberline {9.4.3}给进程指定比例的CPU负载--cgroup}{32}{subsection.9.4.3}
+\contentsline {chapter}{\numberline {10}实时系统}{33}{chapter.10}
+\contentsline {section}{\numberline {10.1}Real Time 实时系统的含义}{33}{section.10.1}
+\contentsline {section}{\numberline {10.2}抢占：Linux无法硬实时的原因}{33}{section.10.2}
+\contentsline {section}{\numberline {10.3}Linux实时补丁的用法}{34}{section.10.3}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
-\contentsline {part}{\numberline {VI}进程问题集锦}{33}{part.6}
-\contentsline {chapter}{\numberline {11}课后答疑}{34}{chapter.11}
+\contentsline {part}{\numberline {VI}进程问题集锦}{35}{part.6}
+\contentsline {chapter}{\numberline {11}课后答疑}{36}{chapter.11}
 \ttl@stoptoc {default@6}
 \ttl@starttoc {default@7}
-\contentsline {part}{\numberline {VII}参考资料}{36}{part.7}
-\contentsline {chapter}{\numberline {12}参考文献}{37}{chapter.12}
-\contentsline {section}{\numberline {12.1}宋宝华相关网站资源}{37}{section.12.1}
-\contentsline {section}{\numberline {12.2}相关文章网址}{37}{section.12.2}
-\contentsline {chapter}{\numberline {13}相关附件}{38}{chapter.13}
-\contentsline {section}{\numberline {13.1}pdf课件}{38}{section.13.1}
-\contentsline {section}{\numberline {13.2}视频文件}{38}{section.13.2}
-\contentsline {subsection}{\numberline {13.2.1}第一天视频文件}{38}{subsection.13.2.1}
-\contentsline {subsection}{\numberline {13.2.2}第二天视频文件}{38}{subsection.13.2.2}
-\contentsline {subsection}{\numberline {13.2.3}第三天视频文件}{39}{subsection.13.2.3}
-\contentsline {subsection}{\numberline {13.2.4}第四天视频文件}{39}{subsection.13.2.4}
+\contentsline {part}{\numberline {VII}参考资料}{38}{part.7}
+\contentsline {chapter}{\numberline {12}参考文献}{39}{chapter.12}
+\contentsline {section}{\numberline {12.1}宋宝华相关网站资源}{39}{section.12.1}
+\contentsline {section}{\numberline {12.2}相关文章网址}{39}{section.12.2}
+\contentsline {chapter}{\numberline {13}相关附件}{40}{chapter.13}
+\contentsline {section}{\numberline {13.1}pdf课件}{40}{section.13.1}
+\contentsline {section}{\numberline {13.2}视频文件}{40}{section.13.2}
+\contentsline {subsection}{\numberline {13.2.1}第一天视频文件}{40}{subsection.13.2.1}
+\contentsline {subsection}{\numberline {13.2.2}第二天视频文件}{41}{subsection.13.2.2}
+\contentsline {subsection}{\numberline {13.2.3}第三天视频文件}{41}{subsection.13.2.3}
+\contentsline {subsection}{\numberline {13.2.4}第四天视频文件}{42}{subsection.13.2.4}
 \end {multicols}
 \contentsfinish 
