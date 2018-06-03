@@ -12,7 +12,8 @@
 \wdtexbookcolor{green} % green, violet, print
 \ifattachpdffile
 \wdtitle{wangfan的Linux进程笔记--完整版}
-\wdedition{\href{https://github.com/wangfanstar/LinuxProcessNote}{\LaTeX}\quad \href{https://www.wangfanstar.top/categories/宋宝华/}{Web}\quad}
+%\wdedition{\href{https://github.com/wangfanstar/LinuxProcessNote}{\LaTeX}\quad \href{https://www.wangfanstar.top/categories/宋宝华/}{Web}\quad}
+\wdedition{20180522}
 \else
 \wdtitle{wangfan的Linux进程笔记--精简版}
 \wdedition{20180522}
@@ -45,9 +46,13 @@
 % \renewcommand{\thepage}{\arabic{page}}
 % ====== be sure to add this part ====%
 
-\newcommand{\videowarn}{此文档为不带视频附件的精简版本，请用带视频附件的PDF版本，用支持PDF附件的阅读器（推荐adobe系列），直接双击PDF中的视频链接观看视频文件}
-\newcommand{\videoattach}[2]
-{\ifattachpdffile\textattachfile{#1}{\textcolor[rgb]{0.00,0.00,0.55}{\textbf{#2}}}\else\videowarn\fi}
+\newcommand{\videoattach}[3]
+{\ifattachpdffile
+\textattachfile{#1}{\textcolor[rgb]{0.00,0.00,0.55}{\textbf{#2}}}
+\else
+{\heiti{#2链接：}}\url{#3}
+\fi
+}
 %\renewcommand{\textbf}[1]{\heiti{#1}}
 
 \input{Abstract.tex}

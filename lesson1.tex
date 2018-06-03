@@ -1,8 +1,8 @@
 
 
-\partabstractfp{\textbf{进程第1天课程摘要} }
-\partabstractrp{}
-\partabstractlettrine{}{} % the first word of the abstract
+\partabstractfp{进程有6种状态。\\~\\~\\考虑以下问题：\\1. 僵尸态是什么？\\2. 如何进入停止态？\\3. 什么是内存泄露？\\4. task\_struct与task\_struct之间的关系是什么？}
+\partabstractrp{{\heiti{练习题：}}\\1. fork的例子 \\2. life-period例子，观察僵尸\\3.用cpulimit控制cpu利用率}
+\partabstractlettrine{L}{inux} % the first word of the abstract
 
 \part{进程课第1天}
 
@@ -85,7 +85,7 @@ file locks                      (-x) unlimited
 \subsection{linux的pid与tgid}
 一个进程fork出子进程后，从linux内核的角度看，对应的pid肯定不一样。但是为了符合POSIX的标准要求，POSIX要求规定同一个父进程fork出的子进程，调用getpid返回的pid的号必须是一样的，我们用top命令查看进程可以看到fork出的子进程与父进程的Pid号是一样的。linux实现的原理就是通过增加一个tgid来实现父子进程调用getpid时返回值都一样的效果。
 \begin{tcolorbox}[colback=blue!5,colframe=blue!75!black,title=pid和tgid 视频]
-\videoattach{4- pid-tgid-pthread-self}{pid和tgid视频演示}
+\videoattach{4- pid-tgid-pthread-self}{pid和tgid视频演示}{https://share.weiyun.com/5wYury8}
 \end{tcolorbox}
 
 \subsection{linux进程task\_struct的三种数据结构}
@@ -100,7 +100,7 @@ file locks                      (-x) unlimited
   }
 \end{figure}
 \chapter{进程的状态特征}
-linux进程的生命周期对应6个状态，
+~\\linux进程的生命周期对应6个状态，
 \section{进程状态切换}
 \subsection{进程运行时的3个基本状态}
 操作系统包括实时系统对应进程一般都有3个状态，进程在有CPU时对应运行态，无CPU时对应就绪态和睡眠态。就绪态指所有资源都准备好，只要有CPU就可以运行了。睡眠指有资源还未准备好，比如读串口数据时，数据还未发送。此时有CPU也无法运行，需要等资源准备好后变成就绪态，然后得到CPU后才能变成运行态，其转换关系如\ref{process_3types}所示。
