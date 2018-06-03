@@ -38,13 +38,6 @@
 \floatfoot*{附注: 优先级数字越低优先级越高：中断 > 软中断  > spinlock > 普通进程}
 }
 \end{table}
-
-\section{中断负载均衡}
-在TOP命令中，cpu时间占用中有一列是\textbf{hi}和\textbf{si}，分别对应中断和软中断。说明cpu时间除了在task\_struct上，还有可能花在中断和软中断，当网络流量比较大时，cpu花在中断和软中断的时间比较大，可以考虑中断负载均衡。\\
-
-分配IRQ到某个CPU，掩码01代表CPU0，02代表CPU1，04代表CPU2，08代表CPU3
-
-
 以上优先级的任务在linux处理规则如下：
 
 \begin{enumerate}
@@ -56,6 +49,13 @@
         \item 如果CPU在处理4普通进程的任务时，高优先级的中断和软中断可以直接抢占普通进程，不用等调度算法调度。
         \end{itemize}
 \end{enumerate}
+\section{中断负载均衡}
+在TOP命令中，cpu时间占用中有一列是\textbf{hi}和\textbf{si}，分别对应中断和软中断。说明cpu时间除了在task\_struct上，还有可能花在中断和软中断，当网络流量比较大时，cpu花在中断和软中断的时间比较大，可以考虑中断负载均衡。\\
+
+分配IRQ到某个CPU，掩码01代表CPU0，02代表CPU1，04代表CPU2，08代表CPU3
+
+
+
 \begin{latexcmd}[label= 中断分配到CPU方法]
 #此命令将中断145分配到CPU0上处理
 [root@boss ~] # echo 01 > /proc/irq/145/smp_affinity
