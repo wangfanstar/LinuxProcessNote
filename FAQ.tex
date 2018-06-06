@@ -65,6 +65,15 @@ A: 多个core单独各玩各的，谁先启动没有讲究，取决于产品，�
 \tcblower
 A: 内核和用户态都是用相同的算法来进行调度，内核的调度没有比用户态更优越，用户态的调度策略和优先级比内核高时也可以抢占内核的。内存方面lazy有它的解法，主要是先申请malloc，立即释放，稳住堆；提前调用一个很大的临时变量的函数，稳住栈；提前把线程都创建；mlockall屏蔽交换。这些都有套路，看文档即可。
 \end{tcolorbox}
+
+
+
+  \item
+\begin{tcolorbox}[colback=green!5,colframe=green!75!black]
+\hei{Q: 有人说一但调用了\_\_do\_softirq，这个函数不可抢占，这种说法是否正确？}
+\tcblower
+A: 该怎么抢怎么抢，该抢的你让它抢，你只需保证抢了后的数据不出错即可。别的核还是可以访问你的核正在访问的数据的，tasklet里面该加的锁就得加。保护数据而不是保护过程。
+\end{tcolorbox}
 \end{enumerate}
 
 %%% Local Variables:
