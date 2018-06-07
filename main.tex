@@ -3,8 +3,14 @@
 % !Mode:: "TeX:UTF-8"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{mactexbook}
+\newif\ifattachpdffile
+\newif\ifLinuxProcess
+\newif\ifLinuxMemory
+\newif\ifLinuxIO
+\newif\ifLinuxOther
 \attachpdffilefalse  %false 控制编译时不添加 视频附件
 %\attachpdffiletrue  %true 添加 视频附件
+\LinuxProcesstrue
 
 
 \wdtexbooktheme{bodie} %
@@ -54,14 +60,16 @@
 }
 %\renewcommand{\textbf}[1]{\heiti{#1}}
 
+\ifLinuxProcess
 \input{Abstract.tex}
 \input{lesson1.tex}
 \input{lesson2.tex}
 \input{lesson3.tex}
 \input{lesson4.tex}
-
 \input{FAQ.tex}
 \input{reference.tex}
+\fi
+
 
 %====== be sure to add this part ====%
 %\addtocontents{toc}{\protect\end{multicols}}

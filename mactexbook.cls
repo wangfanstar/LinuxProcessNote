@@ -225,6 +225,5 @@
 %\renewcommand\refname{参考文献}     %article类型
 \renewcommand*\indexname{索\quad 引}    %
 
-\newif\ifattachpdffile
-\attachpdffiletrue
+
 \endinput
